@@ -1,0 +1,23 @@
+<h1 style="color: brown;">Studnet feesback form submit</h1>
+
+<form (ngSubmit)="formsubmit()">
+  Student Name:<input type="text" [(ngModel)]="sn" name="sn"><br>
+  Batch No:<input type="text" [(ngModel)]="bn" name="bn"><br>
+  Student Feedback: <textarea [(ngModel)]="fb" name="fb"></textarea><br>
+  <button type="submit">submit</button>
+</form>
+
+
+
+<table>
+  <tr>
+    <th>Student Name</th>
+    <th>Batch Number</th>
+    <th>Student Feedback</th>
+  </tr>
+  <tr *ngFor="let i of std">
+    <td>{{i.sn}}</td>
+    <td>{{i.bn}}</td>
+    <td>{{i.fb}}</td>
+  </tr>
+</table>

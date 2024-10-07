@@ -1,0 +1,62 @@
+
+<body [ngClass]="{'highlight':ishighlight, 'fontcolor':ishighlight}">
+  
+
+<h1 style="color: blue;">here we have learn about Directives in Angular</h1>
+
+<h2 style="color: brown;">ngIf class and use of it</h2>
+
+<div *ngIf="data; else signUpButton">
+  <p>Welcome, {{ data.name }}!</p>
+  <button (click)="logout()">Logout</button> <br>
+  <button>Sign In</button>
+</div>
+
+<ng-template #signUpButton>
+  <button (click)="login()">Sign Up</button>
+</ng-template>
+
+
+<h2 style="color: brown;">ngFor Directives</h2>
+<p>numbers=[22,3,0,66,2,46,30,6,4,7] <br>
+  now apply for loop on that
+</p>
+<ul>
+  <li *ngFor="let i of numbers" >
+    {{i}}
+  </li>
+</ul>
+
+<h4>now apply a filter and select number which is greater than 20</h4>
+<ul>
+  <li *ngFor="let i of numbers" >
+    <ng-container *ngIf="i>=20">
+      {{i}}
+    </ng-container>
+    
+  </li>
+</ul>
+
+<h2 style="color: brown;">ngSwitch Directives</h2>
+
+<div [ngSwitch]="color">
+  <div *ngSwitchCase="'yellow'">You selected yellow color</div>
+  <div *ngSwitchCase="'pink'">You selected pink color </div>
+  <div *ngSwitchCase="'orange'">You selected orange color</div>
+  <div *ngSwitchDefault>Please select an color.</div>
+</div>
+<div [ngClass]="{'highlightt':ishighlight}">
+<h1 style="color: brown;">Attribute Directives  </h1>
+
+<h2 style="color: rgb(69, 42, 165);">ngClass </h2>
+
+<button (click)="darkOrLight()" >click here to change theme</button>
+
+</div>
+
+<h2 style="color: rgb(69, 42, 165);">ngStyle </h2>
+<div [ngStyle]="{'background-color': backgroundColor, 'font-size.px': fontSize, 'color':textcolor}">
+  This div's styles change based on the component's state.
+</div>
+
+</body>

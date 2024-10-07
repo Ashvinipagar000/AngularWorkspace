@@ -1,0 +1,58 @@
+<div style="height: 100vh; width: 100%; background-color:rgb(191, 234, 252);">
+
+
+<body  [ngStyle]="{'background-color':bgcolor}">
+    
+
+<div class="form-group" >
+<label for="numberselect" style="font-size: 30px;   background-color: blueviolet; color: aliceblue;">select a number</label><br>
+<select  id="numberselect" class="form-control" [(ngModel)]="selectedNumber" >
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option>
+<option value="13">13</option>
+<option value="14">14</option>
+<option value="15">15</option>
+<option value="16">16</option>
+<option value="17">17</option>
+<option value="18">18</option>
+<option value="19">19</option>
+<option value="20">20</option>
+</select>
+</div>
+
+
+<div>
+    <input type="number" [(ngModel)]="selectedNumber" placeholder="Enter a number" />
+    <button (click)="printTables()">Generate Tables</button>
+  </div>
+  
+  <h2>Multiplication Tables up to {{ selectedNumber }}</h2>
+
+  <div class="tables-section">
+    <div *ngFor="let entry of multiplicationTable" class="table-container">
+      <h3>Table for {{ entry.number }}</h3>
+      <div *ngFor="let result of entry.table; let i = index">
+        {{result}}
+      </div>
+          
+          
+    </div>
+  </div>
+
+  
+
+
+
+
+</body>
+</div>

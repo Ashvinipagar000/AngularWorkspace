@@ -1,0 +1,34 @@
+<h1 style="color: blue;">here we have learn about types of data binding in angular</h1>
+
+<h1 style="color: brown;">Type 1 is Interpolation</h1>
+
+<h3>{{hii}}</h3>
+
+
+<p>{{ currentDate | date:'fullDate' }}</p>
+<p>{{ getGreeting() }}</p>
+
+
+<h4>I'm {{username}}</h4>
+
+
+<h1 style="color: brown;"> Property binding</h1>
+
+<img [src]="imageurl" > <br>
+<button  [disabled]="isdisable" >click me</button><br>
+<input type="text" [value]="val1">
+<p>{{val1}}</p>
+
+<h1 style="color: brown;">Event binding</h1>
+
+<button (click)="m1()">click me </button>
+
+<div style="border: solid; border-width: 25%;" >
+  <p (mouseover)="ms()">asjdhsd dfjskfjslkdf sdfjkjs</p>
+</div>
+
+<h1 style="color: brown;">two way binding</h1>
+
+<input type="text" [(ngModel)]="myval">
+
+<h4>{{myval}}</h4>
