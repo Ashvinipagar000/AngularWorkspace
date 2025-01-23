@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal - www.codingnepalweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+   <!-- <title> Responsive Drop Down Navigation Menu | CodingLab </title>-->
+    <!-- Boxicons CDN Link -->
+
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <nav>
+    <div class="navbar">
+      <i class='bx bx-menu'></i>
+      <div class="logo"><a href="#">Campus-Recruitment</a></div>
+      <div class="nav-links">
+
+        <ul class="links">
+          <li><a href="#about-section">ABOUT US</a></li>
+          <li><a href="#contact-section">CONTACT US</a></li>
+
+          <li><a class="login-button" routerLink="/student-login">STUDENT LOGIN</a></li>
+          <li><a class="login-button" routerLink="/user-login">USER LOGIN</a></li>
+        </ul>
+      </div>
+      <div class="search-box">
+        <i class='bx bx-search'></i>
+        <div class="input-box">
+          <input type="text" placeholder="Search...">
+        </div>
+      </div>
+    </div>
+  </nav>
+
+
+ <!-- About Us Section -->
+ <section id="about-section">
+  <div class="container">
+    <h2>About Campus Recruitment</h2>
+    <p>
+      Campus recruitment is a process that enables companies to select, recruit, and hire fresh talent directly from educational institutions. It provides students with an opportunity to secure jobs before they graduate and is an essential part of the career planning and placement strategy of most colleges. Campus recruitment bridges the gap between the academic world and professional careers, allowing students to make a smooth transition into the workforce.
+    </p>
+
+    <!-- Information Cards -->
+    <div class="about-cards">
+      <div class="about-card">
+        <h4>Who Are We?</h4>
+        <p>We are a leading recruitment platform connecting top companies with the best student talent from universities nationwide.</p>
+      </div>
+      <div class="about-card">
+        <h4>Our Mission</h4>
+        <p>Our mission is to ensure that students have access to the best career opportunities while companies can efficiently find fresh and motivated talent.</p>
+      </div>
+      <div class="about-card">
+        <h4>How It Works</h4>
+        <p>Our platform facilitates the entire recruitment process, from job postings and candidate applications to interviews and offer letters.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+ <!-- Contact Us Section -->
+ <section id="contact-section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6 offset-md-3">
+        <div class="card p-4">
+          <h2 class="text-center mb-4">Contact Us</h2>
+          <form>
+            <div class="form-group mb-3">
+              <label for="name">Name</label>
+              <input type="text" class="form-control" id="name" placeholder="Enter your name">
+            </div>
+            <div class="form-group mb-3">
+              <label for="email">Email</label>
+              <input type="email" class="form-control" id="email" placeholder="Enter your email">
+            </div>
+            <div class="form-group mb-3">
+              <label for="message">Message</label>
+              <textarea class="form-control" id="message" rows="4" placeholder="Your message"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+</body>
+</html>

@@ -1,0 +1,87 @@
+
+<div class="text-center mt-4">
+  <p>
+    <a
+      routerLink="/register"
+      routerLinkActive="fw-bold text-primary"
+      class="text-black text-decoration-none"
+    >
+      Register here
+    </a>
+    /
+    <a
+      routerLink="/login"
+      routerLinkActive="fw-bold text-primary"
+      class="text-black text-decoration-none"
+    >
+      Login here
+    </a>
+  </p>
+</div>
+
+
+
+<div class="container mt-5">
+
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card shadow-lg">
+        <div class="card-body">
+          <h3 class="card-title text-center mb-4">Login</h3>
+
+          <!-- Form starts here -->
+          <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input
+                id="email"
+                formControlName="email"
+                type="email"
+                class="form-control"
+                placeholder="Enter your email"
+                required />
+
+              <div *ngIf="f.email.touched && f.email.invalid" class="text-danger mt-2">
+                <div *ngIf="f.email.errors?.required">Email is required</div>
+                <div *ngIf="f.email.errors?.email">Please enter a valid email</div>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input
+                id="password"
+                formControlName="password"
+                type="password"
+                class="form-control"
+                placeholder="Enter your password"
+                required />
+
+              <div *ngIf="f.password.touched && f.password.invalid" class="text-danger mt-2">
+                <div *ngIf="f.password.errors?.required">Password is required</div>
+                <div *ngIf="f.password.errors?.minlength">Password must be at least 6 characters long</div>
+              </div>
+            </div>
+
+            <div class="d-grid gap-2 mb-3">
+              <button
+                type="submit"
+                class="btn btn-primary"
+                [disabled]="loading">
+                <span *ngIf="loading" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                Login
+              </button>
+            </div>
+            <div class="text-center mt-3">
+              <p>Don't have an account? <a routerLink="/register">Register here</a></p>
+            </div>
+          </form>
+
+          <div *ngIf="error" class="text-danger mt-3 text-center">
+            {{ error }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

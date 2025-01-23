@@ -1,0 +1,43 @@
+<div class="form-group d-flex align-items-center" style="width: 300px; margin: 0 auto; margin-top: 100px; padding: 10px; border-radius: 5px;">
+  <label for="address">IP Address</label>
+  <input type="text" class="form-control me-2" [(ngModel)]="ipAddress" name="address" id="address" style="width: 200px;">
+  <button type="submit" class="btn btn-primary" (click)="addIpAddress()">Add</button>
+</div>
+<br><br><br>
+
+
+<div class="d-flex justify-content-center my-4">
+  <h2>IP List</h2>
+</div>
+
+
+<div style="width: 300px; margin: 0 auto; border: 1px solid #ddd; padding: 10px; border-radius: 5px;">
+  <table class="table table-sm" style="margin: 0;">
+    <thead>
+      <tr>
+        <th scope="col" style="width: 50px;">ID</th>
+        <th scope="col" style="width: 150px;">IP Addresses</th>
+        <th scope="col" style="width: 100px;">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let ip of ipList">
+        <td>{{ ip.id }}</td>
+        <td>
+          <!-- If editing, show input field to update IP address -->
+          <input *ngIf="editingIpId === ip.id" [(ngModel)]="editedIpAddress" class="form-control" style="width: 150px;" />
+          <!-- Otherwise, show the IP address as text -->
+          <span *ngIf="editingIpId !== ip.id">{{ ip.ipAddress }}</span>
+        </td>
+        <td>
+          <!-- Edit button, which will allow editing of the IP address -->
+          <button class="btn btn-sm btn-primary" (click)="editIp(ip)">Edit</button>
+          <!-- Delete button to remove the IP address -->
+          <button class="btn btn-sm btn-danger" (click)="deleteIp(ip.id)">Delete</button>
+          <!-- Save button appears when editing -->
+          <button *ngIf="editingIpId === ip.id" class="btn btn-sm btn-success" (click)="saveIpAddress(ip.id)">Save</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

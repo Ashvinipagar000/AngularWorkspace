@@ -1,0 +1,40 @@
+
+
+
+
+
+<div class="form-group d-flex " style="width: 300px; margin: 0 auto; margin-top: 100px; padding: 10px; border-radius: 5px;">
+  <input [(ngModel)]="query" class="form-control rounded " placeholder="Search by movie name, director name, or actor name" />
+  <button type="button" class="btn btn-primary"  (click)="search()">Search</button>
+
+</div>
+
+
+<div class="form-group  " style="width: 700px; margin: 0 auto; margin-top: 50px; padding: 30px; border-radius: 5px;">
+
+<table *ngIf="movies.length > 0">
+  <thead>
+      <tr>
+          <th>Movie Id</th>
+          <th>Movie Name</th>
+          <th>Actor Id</th>
+          <th>Actror Name</th>
+          <th>Director Id</th>
+          <th>Director Name</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor="let movie of movies  ">
+
+          <td>{{ movie.movieid }}</td>
+          <td>{{ movie.moviename }}</td>
+          <td>{{ movie.actid }}</td>
+          <td>{{ movie.actname }}</td>
+          <td>{{ movie.dirid }}</td>
+          <td>{{ movie.dirname }}</td>
+      </tr>
+  </tbody>
+</table>
+
+</div>
+

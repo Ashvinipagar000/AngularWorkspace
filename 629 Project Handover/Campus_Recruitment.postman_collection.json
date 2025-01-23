@@ -1,0 +1,603 @@
+{
+	"info": {
+		"_postman_id": "0d0ae01f-4ea1-417e-824f-5b8836d172d5",
+		"name": "Campus_Recruitment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4468909"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "add user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"amit.kumar\",\r\n  \"password\": \"password123\",\r\n  \"question\": \"What is your favorite city?\",\r\n  \"answer\": \"Mumbai\",\r\n  \"role\": \"ADMIN\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8091/user/createUser",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"user",
+								"createUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete user",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8091/user/deleteUser/rahul.patel",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"user",
+								"deleteUser",
+								"rahul.patel"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "all user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8091/user/allUsers",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"user",
+								"allUsers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get user by username",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8091/user/getUser/amit.kumar",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"user",
+								"getUser",
+								"amit.kumar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update user",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"rahul.patel\",\r\n  \"password\": \"securecompany789\",\r\n  \"question\": \"What was the name of your first pet?\",\r\n  \"answer\": \"Tiger\",\r\n  \"role\": \"COMPANY\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8091/user/updateUser",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"user",
+								"updateUser"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Student",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 1,\r\n  \"name\": \"Amit Kumar\",\r\n  \"email\": \"amit.kumar@example.com\",\r\n  \"password\": \"password123\",\r\n  \"contactNumber\": \"9876543210\",\r\n  \"department\": \"Computer Science\",\r\n  \"graduationYear\": \"2024\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8091/students/register",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"students",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "all student",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8091/students/allStudents",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"students",
+								"allStudents"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete student",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8091/students/deleteStudent/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"students",
+								"deleteStudent",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update student",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 1,\r\n  \"name\": \"Amit Kumar\",\r\n  \"email\": \"amit.kumar@example.com\",\r\n  \"password\": \"password1234\",\r\n  \"contactNumber\": \"9876543210\",\r\n  \"department\": \"Computer Science\",\r\n  \"graduationYear\": \"2024\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8091/students/updateStudent",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"students",
+								"updateStudent"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Job Posting",
+			"item": [
+				{
+					"name": "create job",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"jobTitle\": \"Software Engineer\",\r\n  \"companyName\": \"Tech Solutions Pvt Ltd\",\r\n  \"jobDescription\": \"Responsible for developing and maintaining web applications.\",\r\n  \"jobLocation\": \"Bangalore\",\r\n  \"eligibilityCriteria\": \"B.Tech in Computer Science with 70% aggregate\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8091/job-postings/createJob",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"job-postings",
+								"createJob"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "all jobs",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8091/job-postings/allJobs",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"job-postings",
+								"allJobs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete job",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8091/job-postings/deleteJob/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"job-postings",
+								"deleteJob",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update job",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\":1,\r\n  \"jobTitle\": \"Software Engineer\",\r\n  \"companyName\": \"Tech Solutions Pvt Ltd.\",\r\n  \"jobDescription\": \"Responsible for developing and maintaining web applications.\",\r\n  \"jobLocation\": \"Bangalore\",\r\n  \"eligibilityCriteria\": \"B.Tech in Computer Science with 70% aggregate\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8091/job-postings/updateJob",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"job-postings",
+								"updateJob"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Job Apply",
+			"item": [
+				{
+					"name": "apply for job",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"studentId\": 1,\r\n  \"jobPostingId\": 1,\r\n  \"status\": \"APPLIED\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8091/jobApplication/apply",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"jobApplication",
+								"apply"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update status",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "localhost:8091/jobApplication/updateStatus/1/APPROVED",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"jobApplication",
+								"updateStatus",
+								"1",
+								"APPROVED"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all job application",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8091/jobApplication/all",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"jobApplication",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get job application by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8091/jobApplication/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"jobApplication",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete job application",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8091/jobApplication/delete/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"jobApplication",
+								"delete",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Interview",
+			"item": [
+				{
+					"name": "Schedule Interview",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"studentId\": 1,\r\n  \"jobApplicationId\": 1,\r\n  \"interviewDate\": \"2024-10-20\",\r\n  \"interviewStatus\": \"SCHEDULED\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8091/interviews/scheduleInterview",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"interviews",
+								"scheduleInterview"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "all interviews",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8091/interviews/allInterviews",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"interviews",
+								"allInterviews"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cancel interview",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8091/interviews/cancelInterview/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"interviews",
+								"cancelInterview",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update interview (reschedule,CANCEL etc)",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 2,\r\n    \"studentId\": 1,\r\n    \"jobApplicationId\": 1,\r\n    \"interviewDate\": \"2024-10-20\",\r\n    \"interviewStatus\": \"CANCELLED\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8091/interviews/reschedule",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"interviews",
+								"reschedule"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "user login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"amit.kumar\",\r\n    \"password\":\"password123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8091/auth/user-login",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"auth",
+								"user-login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "student login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"amit.kumar@example.com\",\r\n    \"password\":\"password1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8091/auth/student-login",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"auth",
+								"student-login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

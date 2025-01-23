@@ -1,0 +1,123 @@
+<p>list works..!</p>
+
+<!--  -->
+  <!-- <div class="row border">
+    <div class="col-12 border">
+      One of three columns
+    </div>
+    <div class="col-md-6 border">
+      two of three columns
+    </div>
+    <div class="col-sm-4 border">
+      three of three columns
+    </div>
+  </div> -->
+&nbsp;
+&nbsp;
+
+<div class="col-2">
+  <div class="form-group">
+    <label for="project-name">Year Of PDP 1</label>
+    <div>
+      <input type="date">
+    </div>
+  </div>
+</div>
+
+<div class="form-group col-2">
+  <label for="yearOfPDP">Year of PDP 2</label>
+  <input type="date" class="form-control" id="yearOfPDP" placeholder="DD/MM/YYYY">
+</div>
+
+
+
+<div class="form-group col-2">
+  <label for="yearOfPDP">Year of PDP 3</label>
+  <input type="text" id="yearOfPDP" class="form-control" bsDatepicker placeholder="DD/MM/YYYY">
+</div>
+
+
+
+<div class="form-group">
+  <label for="yearOfPDP">Year of PDP 4</label>
+  <input type="date" class="form-control" id="yearOfPDP" placeholder="DD/MM/YYYY">
+</div>
+<mat-form-field appearance="outline">
+  <mat-label>Year of PDP</mat-label>
+  <input matInput [matDatepicker]="picker" placeholder="DD/MM/YYYY">
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+</mat-form-field>
+
+
+
+<!--  -->
+<div>
+  <!-- Dropdown for multiple selection -->
+  <label for="dropdown">Select Options:</label>
+  <select id="dropdown" multiple [(ngModel)]="chatPayload.selectedOptions" class="form-control">
+    <option *ngFor="let option of dropdownOptions" [value]="option">{{ option }}</option>
+  </select>
+
+  <!-- Input fields -->
+  <label for="customerName">Customer Name:</label>
+  <input id="customerName" type="text" [(ngModel)]="chatPayload.customerName" class="form-control" />
+
+  <label for="projectName">Project Name:</label>
+  <input id="projectName" type="text" [(ngModel)]="chatPayload.projectName" class="form-control" />
+
+  <label for="equipmentName">Equipment Name:</label>
+  <input id="equipmentName" type="text" [(ngModel)]="chatPayload.equipmentName" class="form-control" />
+
+  <label for="projectNumber">Project Number:</label>
+  <input id="projectNumber" type="text" [(ngModel)]="chatPayload.projectNumber" class="form-control" />
+
+  <label for="date">Date:</label>
+  <input id="date" type="date" [(ngModel)]="chatPayload.date" class="form-control" />
+
+  <!-- Submit Button -->
+  <button (click)="submitPayload()" class="btn btn-primary mt-3">Submit</button>
+</div>
+
+
+
+<!-- <div class="inner-card-section mt-1">
+  <p>here are some promots</p>
+  <div class="card_div_row mt-3 mb-2">
+    <div class="card-newchat mb-2">
+      <div class="card card-margin">
+        <div class="card-body ">
+          <div class="textclip">
+            <div>=></div>
+          </div>
+        </div>
+      </div>
+    </div>row mt-3 mb-2
+  </div>col-md-6 mb-3
+  </div>
+</div> -->
+
+<div class="inner-card-section mt-1">
+  <p>Here are some sample prompts for you to choose from:</p>
+
+  <div class=" row  mt-3 mb-2 _ngcontent-ng-c1550522697">
+    <div class="card-newchat col-md-6 mb-3" *ngFor="let item of promptList.slice(0, 2); let i = index">
+      <div class="card cardMargin custom-card-width ">
+        <div class="card-body" *ngFor="let pitem of item.samplePromptList.slice(0, 1)">
+          <div class="textclip" (click)="chatTextUpdate(pitem.prompt)">
+            <div class="sample-prompt" >
+              {{ pitem.prompt }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+  /* Apply left margin to the last .card-newchat */
+  .card-newchat:last-child {
+    margin-left: 20px; /* Adjust the value as needed */
+  }
+</style>
+

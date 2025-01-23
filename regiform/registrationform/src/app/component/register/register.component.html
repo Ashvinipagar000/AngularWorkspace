@@ -1,0 +1,138 @@
+
+
+
+
+<div class="text-center mt-4">
+  <p>
+    <a
+      routerLink="/register"
+      routerLinkActive="fw-bold text-primary"
+      class="text-black text-decoration-none"
+    >
+      Register here
+    </a>
+    /
+    <a
+      routerLink="/login"
+      routerLinkActive="fw-bold text-primary"
+      class="text-black text-decoration-none"
+    >
+      Login here
+    </a>
+  </p>
+</div>
+
+
+
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6">
+      <div class="card shadow-lg">
+        <div class="card-body">
+          <h3 class="card-title text-center mb-4">Register</h3>
+
+          <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+
+            <!-- Username -->
+            <div class="form-group mb-3">
+              <label for="username" class="form-label">Name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="username"
+                formControlName="username"
+                placeholder="Enter your name"
+                required />
+              <div *ngIf="registrationForm.get('username')?.invalid && registrationForm.get('username')?.touched" class="text-danger">
+                Name is required.
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div class="form-group mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                formControlName="email"
+                placeholder="Enter your email"
+                required />
+              <div *ngIf="registrationForm.get('email')?.invalid && registrationForm.get('email')?.touched" class="text-danger">
+                Enter a valid email.
+              </div>
+            </div>
+
+            <!-- Password -->
+            <div class="form-group mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input
+                type="password"
+                class="form-control"
+                id="password"
+                formControlName="password"
+                placeholder="Enter your password"
+                required />
+              <div *ngIf="registrationForm.get('password')?.invalid && registrationForm.get('password')?.touched" class="text-danger">
+                Password is required (min 6 characters).
+              </div>
+            </div>
+
+            <!-- Confirm Password -->
+            <div class="form-group mb-3">
+              <label for="confirmPassword" class="form-label">Confirm Password</label>
+              <input
+                type="password"
+                class="form-control"
+                id="confirmPassword"
+                formControlName="confirmPassword"
+                placeholder="Confirm your password"
+                required />
+              <div *ngIf="registrationForm.get('confirmPassword')?.invalid && registrationForm.get('confirmPassword')?.touched" class="text-danger">
+                Passwords must match.
+              </div>
+            </div>
+
+            <!-- Country -->
+            <div class="form-group mb-3">
+              <label for="country" class="form-label">Country</label>
+              <select id="country" formControlName="country" class="form-select" required>
+                <option value="" disabled>Select a country</option>
+                <option *ngFor="let country of filteredCountries" [value]="country.name">{{ country.name }}</option>
+              </select>
+            </div>
+
+            <!-- State -->
+            <div class="form-group mb-3">
+              <label for="state" class="form-label">State</label>
+              <select id="state" formControlName="state" class="form-select" required>
+                <option value="" disabled>Select a state</option>
+                <option *ngFor="let state of filteredStates" [value]="state.name">{{ state.name }}</option>
+              </select>
+            </div>
+
+            <!-- City -->
+            <div class="form-group mb-4">
+              <label for="city" class="form-label">City</label>
+              <select id="city" formControlName="city" class="form-select" required>
+                <option value="" disabled>Select a city</option>
+                <option *ngFor="let city of filteredCities" [value]="city.name">{{ city.name }}</option>
+              </select>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="d-flex justify-content-center">
+              <button type="submit" class="btn btn-primary w-100" [disabled]="registrationForm.invalid">
+                Register
+              </button>
+
+            </div><div class="text-center mt-3">
+                <p>Already have an account? <a routerLink="/login">Login here</a></p>
+              </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

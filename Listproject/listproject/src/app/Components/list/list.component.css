@@ -1,0 +1,12 @@
+.custom-card-width {
+  max-width: 300px; /* Reduce card width */
+  margin: 0 auto;   /* Center cards horizontally */
+}
+.row[_ngcontent-ng-c1550522697] {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 15px; /* Maintain spacing between cards */
+  justify-content: flex-start; /* Align items to the left */
+  margin-left: 0; /* Ensure no unintended margin on the left */
+  padding-left: 0; /* Remove padding on the left if applied */
+}

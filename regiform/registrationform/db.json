@@ -1,0 +1,33 @@
+{
+  "users": [
+    {
+      "userid": "12",
+      "username": "ashvini0@gmail.com",
+      "password": "1234",
+      "country": "India",
+      "state": "Maharashtre",
+      "city": "Pune",
+      "id": "dd2b"
+    },
+    {
+      "id": "fa1c",
+      "userid": "",
+      "username": "Ashvini_pagar",
+      "email": "ashvinipagar000@gmail.com",
+      "password": "1234",
+      "country": "India",
+      "state": "Maharashtra",
+      "city": "Pune"
+    },
+    {
+      "id": "4235",
+      "userid": "",
+      "username": "ash",
+      "email": "ashvinipagar000@gmail.com",
+      "password": "ds",
+      "country": "India",
+      "state": "Maharashtra",
+      "city": "PUNE METROPOLITAN AREA"
+    }
+  ]
+}

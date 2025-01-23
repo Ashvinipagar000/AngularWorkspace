@@ -1,0 +1,124 @@
+
+
+
+
+<div class="container mt-4">
+  <div class="search-container mb-4">
+    <div class="input-group">
+      <input
+        type="text"
+        class="form-control"
+        [(ngModel)]="searchName"
+        placeholder="Enter user name to search"
+      />
+      <button class="btn btn-primary" (click)="searchUser()">Search</button>
+    </div>
+  </div>
+
+  <p class="lead">Admin Dashboard</p>
+
+  <table class="table table-striped table-bordered table-hover">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Country</th>
+        <th scope="col">State</th>
+        <th scope="col">City</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of getPaginatedUsers(); let i = index">
+        <td>{{ i + 1 }}</td>
+
+        <!-- Editable fields -->
+        <td *ngIf="editUserId !== user.userid">{{ user.username }}</td>
+        <td *ngIf="editUserId === user.userid">
+          <input [(ngModel)]="editForm.username" class="form-control" />
+        </td>
+
+        <td *ngIf="editUserId !== user.userid">{{ user.email }}</td>
+        <td *ngIf="editUserId === user.userid">
+          <input [(ngModel)]="editForm.email" class="form-control" />
+        </td>
+
+        <td *ngIf="editUserId !== user.userid">{{ user.country }}</td>
+        <td *ngIf="editUserId === user.userid">
+          <input [(ngModel)]="editForm.country" class="form-control" />
+        </td>
+
+        <td *ngIf="editUserId !== user.userid">{{ user.state }}</td>
+        <td *ngIf="editUserId === user.userid">
+          <input [(ngModel)]="editForm.state" class="form-control" />
+        </td>
+
+        <td *ngIf="editUserId !== user.userid">{{ user.city }}</td>
+        <td *ngIf="editUserId === user.userid">
+          <input [(ngModel)]="editForm.city" class="form-control" />
+        </td>
+
+        <!-- Actions -->
+        <td>
+          <button
+            *ngIf="editUserId !== user.userid"
+            type="button"
+            class="btn btn-info btn-sm"
+            (click)="startEditing(user)"
+          >
+            Update
+          </button>
+          <div *ngIf="editUserId === user.userid">
+            <button
+              type="button"
+              class="btn btn-success btn-sm"
+              (click)="saveUser(user)"
+            >
+              Save
+            </button>
+            <button
+              type="button"
+              class="btn btn-secondary btn-sm"
+              (click)="cancelEditing()"
+            >
+              Cancel
+            </button>
+          </div>
+&nbsp;
+&nbsp;
+          <button
+            type="button"
+            class="btn btn-danger btn-sm"
+            (click)="deleteUser(user)"
+          >
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Pagination Controls -->
+  <div class="d-flex justify-content-between align-items-center">
+    <div>
+      <button
+        class="btn btn-outline-secondary btn-sm"
+        (click)="previousPage()"
+        [disabled]="currentPage === 1"
+      >
+        Previous
+      </button>
+      <span class="mx-2">Page {{ currentPage }} of {{ totalPages }}</span>
+      <button
+        class="btn btn-outline-secondary btn-sm"
+        (click)="nextPage()"
+        [disabled]="currentPage === totalPages"
+      >
+        Next
+      </button>
+    </div>
+  </div>
+</div>
+
+

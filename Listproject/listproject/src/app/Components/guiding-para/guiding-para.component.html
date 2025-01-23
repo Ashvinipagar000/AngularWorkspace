@@ -1,0 +1,549 @@
+<!-- 1 -->
+<div class="container mt-5">
+  <h2 class="text-center mb-4">Guiding Parameters</h2>
+  <form (ngSubmit)="onSubmit()" #guidingForm="ngForm">
+    <div class="row g-4">
+      <div class="col-md-3">
+        <label for="customer-name" class="form-label">Customer Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="customer-name"
+          name="customerName"
+          [(ngModel)]="formData.customerName"
+          placeholder="Type here"
+          required
+        />
+      </div>
+      <div class="col-md-3">
+        <label for="equipment-name" class="form-label">Equipment Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="equipment-name"
+          name="equipmentName"
+          [(ngModel)]="formData.equipmentName"
+          placeholder="Type here"
+          required
+        />
+      </div>
+      <div class="col-md-3">
+        <label for="project-name" class="form-label">Project Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="project-name"
+          name="projectName"
+          [(ngModel)]="formData.projectName"
+          placeholder="Type here"
+          required
+        />
+      </div>
+      <div class="col-md-3">
+        <label for="technology" class="form-label">Technology</label>
+        <select
+          class="form-select"
+          id="technology"
+          name="technology"
+          [(ngModel)]="formData.technology"
+          required
+        >
+          <option value="" disabled selected>Select</option>
+          <option *ngFor="let tech of technologyOptions" [value]="tech">{{ tech }}</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="row g-4 mt-3">
+      <div class="col-md-3">
+        <label for="year-of-pdp" class="form-label">Year of PDP</label>
+        <input
+          type="date"
+          class="form-control"
+          id="year-of-pdp"
+          name="yearOfPdp"
+          [(ngModel)]="formData.yearOfPdp"
+          required
+        />
+      </div>
+      <div class="col-md-3">
+        <label for="plant-location" class="form-label">Plant Location</label>
+        <input
+          type="text"
+          class="form-control"
+          id="plant-location"
+          name="plantLocation"
+          [(ngModel)]="formData.plantLocation"
+          placeholder="Type here"
+          required
+        />
+      </div>
+      <div class="col-md-3">
+        <label for="unit-name" class="form-label">Unit Name</label>
+        <select
+          class="form-select"
+          id="unit-name"
+          name="unitName"
+          [(ngModel)]="formData.unitName"
+          required
+        >
+          <option value="" disabled selected>Select</option>
+          <option *ngFor="let unit of unitOptions" [value]="unit">{{ unit }}</option>
+        </select>
+      </div>
+      <div class="col-md-3">
+        <label for="document-type" class="form-label">Document Type</label>
+        <select
+          class="form-select"
+          id="document-type"
+          name="documentType"
+          [(ngModel)]="formData.documentType"
+          required
+        >
+          <option value="" disabled selected>Select</option>
+          <option *ngFor="let doc of documentOptions" [value]="doc">{{ doc }}</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="row g-4 mt-3">
+      <div class="col-md-3">
+        <label for="project-number" class="form-label">Project Number</label>
+        <input
+          type="text"
+          class="form-control"
+          id="project-number"
+          name="projectNumber"
+          [(ngModel)]="formData.projectNumber"
+          placeholder="Type here"
+          required
+        />
+      </div>
+    </div>
+
+    <div class="d-flex justify-content-center gap-3 mt-4">
+      <button type="submit" class="btn btn-primary px-5" [disabled]="!guidingForm.valid">SAVE INPUT</button>
+      <button type="button" class="btn btn-outline-secondary px-5" (click)="onReset()">RESET</button>
+    </div>
+  </form>
+</div>
+<!--  -->
+
+<!--  -->
+<!--2  -->
+<div class="container mt-5">
+  <h2 class="text-center mb-4">Guiding Parameters</h2>
+  <form (ngSubmit)="onSubmit()" #guidingForm="ngForm">
+    <!-- Row 1: All 5 fields in one row -->
+    <div class="row mb-4">
+      <div class="col-md-2">
+        <label for="customer-name" class="form-label">Customer Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="customer-name"
+          name="customerName"
+          [(ngModel)]="formData.customerName"
+          placeholder="Type here"
+          required
+        />
+      </div>
+      <div class="col-md-2">
+        <label for="project-name" class="form-label">Project Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="project-name"
+          name="projectName"
+          [(ngModel)]="formData.projectName"
+          placeholder="Type here"
+          required
+        />
+      </div>
+      <div class="col-md-2">
+        <label for="unit-name" class="form-label">Unit Name</label>
+        <select
+          class="form-select"
+          id="unit-name"
+          name="unitName"
+          [(ngModel)]="formData.unitName"
+          required
+        >
+          <option value="" disabled selected>Select</option>
+          <option *ngFor="let unit of unitOptions" [value]="unit">{{ unit }}</option>
+        </select>
+      </div>
+      <div class="col-md-2">
+        <label for="project-number" class="form-label">Project Number</label>
+        <input
+          type="text"
+          class="form-control"
+          id="project-number"
+          name="projectNumber"
+          [(ngModel)]="formData.projectNumber"
+          placeholder="Type here"
+          required
+        />
+      </div>
+      <div class="col-md-2">
+        <label for="technology" class="form-label">Technology</label>
+        <select
+          class="form-select"
+          id="technology"
+          name="technology"
+          [(ngModel)]="formData.technology"
+          required
+        >
+          <option value="" disabled selected>Select</option>
+          <option *ngFor="let tech of technologyOptions" [value]="tech">{{ tech }}</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Row 2: Remaining fields in one row -->
+    <div class="row mb-4">
+      <div class="col-md-2">
+        <label for="equipment-name" class="form-label">Equipment Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="equipment-name"
+          name="equipmentName"
+          [(ngModel)]="formData.equipmentName"
+          placeholder="Type here"
+          required
+        />
+      </div>
+      <div class="col-md-2">
+        <label for="year-of-pdp" class="form-label">Year of PDP</label>
+        <input
+          type="date"
+          class="form-control"
+          id="year-of-pdp"
+          name="yearOfPdp"
+          [(ngModel)]="formData.yearOfPdp"
+          required
+        />
+      </div>
+      <div class="col-md-2">
+        <label for="plant-location" class="form-label">Plant Location</label>
+        <input
+          type="text"
+          class="form-control"
+          id="plant-location"
+          name="plantLocation"
+          [(ngModel)]="formData.plantLocation"
+          placeholder="Type here"
+          required
+        />
+      </div>
+      <div class="col-md-2">
+        <label for="document-type" class="form-label">Document Type</label>
+        <select
+          class="form-select"
+          id="document-type"
+          name="documentType"
+          [(ngModel)]="formData.documentType"
+          required
+        >
+          <option value="" disabled selected>Select</option>
+          <option *ngFor="let doc of documentOptions" [value]="doc">{{ doc }}</option>
+        </select>
+      </div>
+
+
+    <!-- Buttons -->
+    <div class="row mt-4 text-center">
+      <div class="col-md-12">
+        <button type="submit" class="btn btn-primary me-3 px-4 py-2" [disabled]="!guidingForm.valid">
+          Save Input
+        </button>
+        <button type="button" class="btn btn-secondary px-4 py-2" (click)="onReset()">Reset</button>
+      </div>
+    </div>
+    </div>
+  </form>
+</div>
+
+
+
+
+<!--  -->
+<!-- 3 -->
+<div class="container mt-5">
+  <h2 class="text-center mb-4">Guiding Parameters</h2>
+  <form (ngSubmit)="onSubmit()" #guidingForm="ngForm">
+    <!-- Row 1: All 5 fields in one row -->
+    <div class="row mb-4">
+      <div class="col-md-2">
+        <label for="customer-name" class="form-label">Customer Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="customer-name"
+          name="customerName"
+          [(ngModel)]="formData.customerName"
+          placeholder="Type here"
+          required
+        />
+      </div>
+      <div class="col-md-2">
+        <label for="project-name" class="form-label">Project Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="project-name"
+          name="projectName"
+          [(ngModel)]="formData.projectName"
+          placeholder="Type here"
+          required
+        />
+      </div>
+      <div class="col-md-2">
+        <label for="unit-name" class="form-label">Unit Name</label>
+        <select
+          class="form-select"
+          id="unit-name"
+          name="unitName"
+          [(ngModel)]="formData.unitName"
+          required
+        >
+          <option value="" disabled selected>Select</option>
+          <option *ngFor="let unit of unitOptions" [value]="unit">{{ unit }}</option>
+        </select>
+      </div>
+      <div class="col-md-2">
+        <label for="project-number" class="form-label">Project Number</label>
+        <input
+          type="text"
+          class="form-control"
+          id="project-number"
+          name="projectNumber"
+          [(ngModel)]="formData.projectNumber"
+          placeholder="Type here"
+          required
+        />
+      </div>
+      <div class="col-md-2">
+        <label for="technology" class="form-label">Technology</label>
+        <select
+          class="form-select"
+          id="technology"
+          name="technology"
+          [(ngModel)]="formData.technology"
+          required
+        >
+          <option value="" disabled selected>Select</option>
+          <option *ngFor="let tech of technologyOptions" [value]="tech">{{ tech }}</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Row 2: Remaining fields and buttons in one row -->
+    <div class="row mb-4">
+      <div class="col-md-2">
+        <label for="equipment-name" class="form-label">Equipment Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="equipment-name"
+          name="equipmentName"
+          [(ngModel)]="formData.equipmentName"
+          placeholder="Type here"
+          required
+        />
+      </div>
+      <div class="col-md-2">
+        <label for="year-of-pdp" class="form-label">Year of PDP</label>
+        <input
+          type="date"
+          class="form-control"
+          id="year-of-pdp"
+          name="yearOfPdp"
+          [(ngModel)]="formData.yearOfPdp"
+          required
+        />
+      </div>
+      <div class="col-md-2">
+        <label for="plant-location" class="form-label">Plant Location</label>
+        <input
+          type="text"
+          class="form-control"
+          id="plant-location"
+          name="plantLocation"
+          [(ngModel)]="formData.plantLocation"
+          placeholder="Type here"
+          required
+        />
+      </div>
+      <div class="col-md-2">
+        <label for="document-type" class="form-label">Document Type</label>
+        <select
+          class="form-select"
+          id="document-type"
+          name="documentType"
+          [(ngModel)]="formData.documentType"
+          required
+        >
+          <option value="" disabled selected>Select</option>
+          <option *ngFor="let doc of documentOptions" [value]="doc">{{ doc }}</option>
+        </select>
+      </div>
+      <!-- Buttons placed in the last column of the second row -->
+      <div class="col-md-2 d-flex align-items-center justify-content-center">
+        <div class="d-flex justify-content-between w-100">
+          <button type="submit" class="btn btn-primary me-2 px-4 py-2" [disabled]="!guidingForm.valid">
+            Save Input
+          </button>
+          <button type="button" class="btn btn-secondary px-4 py-2" (click)="onReset()">Reset</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+
+<!--  -->
+<!--  -->
+<!-- 4 -->
+
+<div class="container mt-5">
+  <h2 class="text-center mb-4">Guiding Parameters</h2>
+  <form (ngSubmit)="onSubmit()" #guidingForm="ngForm">
+    <!-- Row 1: 5 fields in a single row, each field takes 2 columns on medium screens -->
+    <div class="row mb-4">
+      <div class="col-md-2 col-10">
+        <label for="customer-name" class="form-label">Customer Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="customer-name"
+          name="customerName"
+          [(ngModel)]="formData.customerName"
+          placeholder="Type here"
+          required
+        />
+      </div>
+      <div class="col-md-2 col-10">
+        <label for="project-name" class="form-label">Project Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="project-name"
+          name="projectName"
+          [(ngModel)]="formData.projectName"
+          placeholder="Type here"
+          required
+        />
+      </div>
+      <div class="col-md-2 col-md-2">
+        <label for="unit-name" class="form-label">Unit Name</label>
+        <select
+          class="form-select"
+          id="unit-name"
+          name="unitName"
+          [(ngModel)]="formData.unitName"
+          required
+        >
+          <option value="" disabled selected>Select</option>
+          <option *ngFor="let unit of unitOptions" [value]="unit">{{ unit }}</option>
+        </select>
+      </div>
+      <div class="col-md-2 col-md-2">
+        <label for="project-number" class="form-label">Project Number</label>
+        <input
+          type="text"
+          class="form-control"
+          id="project-number"
+          name="projectNumber"
+          [(ngModel)]="formData.projectNumber"
+          placeholder="Type here"
+          required
+        />
+      </div>
+      <div class="col-md-2 col-md-2">
+        <label for="technology" class="form-label">Technology</label>
+        <select
+          class="form-select"
+          id="technology"
+          name="technology"
+          [(ngModel)]="formData.technology"
+          required
+        >
+          <option value="" disabled selected>Select</option>
+          <option *ngFor="let tech of technologyOptions" [value]="tech">{{ tech }}</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Row 2: Remaining fields and buttons in one row, each field takes 2 columns on medium screens -->
+    <div class="row mb-4">
+      <div class="col-md-2 col-md-2">
+        <label for="equipment-name" class="form-label">Equipment Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="equipment-name"
+          name="equipmentName"
+          [(ngModel)]="formData.equipmentName"
+          placeholder="Type here"
+          required
+        />
+      </div>
+      <div class="col-md-2 col-md-2">
+        <label for="year-of-pdp" class="form-label">Year of PDP</label>
+        <input
+          type="date"
+          class="form-control"
+          id="year-of-pdp"
+          name="yearOfPdp"
+          [(ngModel)]="formData.yearOfPdp"
+          required
+        />
+      </div>
+      <div class="col-md-2 col-md-2">
+        <label for="plant-location" class="form-label">Plant Location</label>
+        <input
+          type="text"
+          class="form-control"
+          id="plant-location"
+          name="plantLocation"
+          [(ngModel)]="formData.plantLocation"
+          placeholder="Type here"
+          required
+        />
+      </div>
+      <div class="col-md-2 col-md-2">
+        <label for="document-type" class="form-label">Document Type</label>
+        <select
+          class="form-select"
+          id="document-type"
+          name="documentType"
+          [(ngModel)]="formData.documentType"
+          required
+        >
+          <option value="" disabled selected>Select</option>
+          <option *ngFor="let doc of documentOptions" [value]="doc">{{ doc }}</option>
+        </select>
+      </div>
+      <!-- Button column: Ensure buttons span full width in the last column -->
+      <div class="col-md-2 col-md-2 d-flex align-items-center justify-content-center">
+        <button type="submit" class="btn btn-primary w-100 me-2 px-4 py-2" [disabled]="!guidingForm.valid">
+          Save Input
+        </button>
+      </div>
+
+    <!-- Reset Button in its own row to prevent stretching the "Save Input" button -->
+    <div class="row mb-4">
+      <div class="col-md-2 col-md-2 d-flex align-items-center justify-content-center">
+        <button type="button" class="btn btn-secondary w-100 px-4 py-2" (click)="onReset()">Reset</button>
+      </div>
+    </div>
+        </div>
+
+  </form>
+</div>
+
+
+
+
+

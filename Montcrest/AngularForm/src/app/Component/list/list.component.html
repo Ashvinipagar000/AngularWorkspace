@@ -1,0 +1,43 @@
+
+<div class="d-flex justify-content-center my-4">
+  <h2>User List</h2>
+</div>
+
+  <div style="width: 700px; margin: 0 auto; border: 1px solid #ddd; padding: 40px; border-radius: 30px;">
+  <table class="table">
+    <thead>
+      <tr>
+
+        <th scope="col">UserId</th>
+        <th scope="col">Username</th>
+        <th scope="col">Email</th>
+        <th scope="col">Birthdate</th>
+        <th scope="col">Allowed ips</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+
+        <tr *ngFor="let user of users; let i = index">
+          <th scope="row">{{ i + 1 }}</th>
+
+
+        <td>{{ user.username }}</td>
+        <td>
+          <input type="email" [(ngModel)]="user.email" name="email" [readonly]="true" />
+        </td>
+        <td>
+          <input type="date" [(ngModel)]="user.birthdate" name="birthdate" />
+        </td>
+        <td>
+          <input type="text" [(ngModel)]="user.ip" name="address" />
+        </td>
+        <td class="d-flex">
+          <button (click)="updateUser(user.userid, user)" class="btn btn-primary">Update</button>
+          <button (click)="deleteuser(user.userid)" class="btn btn-danger">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
